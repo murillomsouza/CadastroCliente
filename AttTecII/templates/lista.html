@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h2 class="mb-4">Lista de Usuários</h2>
+
+    {% if usuarios %}
+    <div class="card shadow">
+        <div class="card-body">
+
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Senha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in usuarios %}
+                    <tr>
+                        <td>{{ user.nome }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.senha }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    {% else %}
+        <div class="alert alert-warning">
+            Nenhum usuário cadastrado.
+        </div>
+    {% endif %}
+
+    <a href="{{ url_for('cadastro') }}" class="btn btn-primary mt-3">
+        Novo Cadastro
+    </a>
+</div>
+
+{% endblock %}

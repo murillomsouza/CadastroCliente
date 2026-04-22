@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+
+    <div class="card shadow p-5 text-center" style="max-width: 500px; width: 100%;">
+
+        <h1 class="mb-3">Sistema de Cadastro</h1>
+        <p class="mb-4 text-muted">Gerencie usuários de forma simples e rápida</p>
+
+        <div class="d-grid gap-3">
+
+            <a href="{{ url_for('cadastro') }}" class="btn btn-primary btn-lg">
+                ➕ Cadastrar Usuário
+            </a>
+
+            <a href="{{ url_for('lista') }}" class="btn btn-success btn-lg">
+                📋 Listar Usuários
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
